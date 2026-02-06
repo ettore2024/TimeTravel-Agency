@@ -34,7 +34,10 @@ export function ChatAgentDrawer() {
 
   const send = async (content: string) => {
     if (!content.trim()) return;
-    const nextMessages = [...messages, { role: "user", content }];
+    const nextMessages: ChatMessage[] = [
+      ...messages,
+      { role: "user", content }
+    ];
     setMessages(nextMessages);
     setInput("");
     setLoading(true);
