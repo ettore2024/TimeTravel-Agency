@@ -47,8 +47,16 @@ npm run preview
 ## Déploiement Vercel (résumé)
 - Build command: `npm run build`
 - Output directory: `dist`
-- Variables: `MISTRAL_API_KEY` (+ éventuellement `VITE_API_URL`)
-- Pour API sur Vercel, préférer des fonctions serverless dans `api/`.
+- Variables: `MISTRAL_API_KEY` (obligatoire)
+- Optionnel: `VITE_API_URL` si l'API n'est pas sur le même domaine
+
+### API serverless (Vercel)
+Les endpoints sont exposés via des fonctions serverless:
+- `api/chat.mjs` (POST `/api/chat`)
+- `api/health.mjs` (GET `/api/health`)
+
+### SPA routing
+Le projet utilise un rewrite SPA via `vercel.json` pour servir `index.html` sur toutes les routes.
 
 ## Structure
 - `src/` UI principale

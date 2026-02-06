@@ -25,7 +25,7 @@ export function ChatAgentDrawer() {
     { role: "assistant", content: "Welcome back. Tell me how you want to feel." }
   ]);
   const { plan } = usePlan();
-  const apiBase = import.meta.env.VITE_API_URL || "http://localhost:5175";
+  const apiBase = import.meta.env.VITE_API_URL ?? "";
 
   const context = useMemo(() => {
     const destination = getDestinationLabel(plan.destinationId);
